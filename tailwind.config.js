@@ -7,6 +7,7 @@ export default {
       colors:{
         "design-green": "#6DA426",
         "design-green-light": "#A2F239",
+        "design-light": "#F1F1F1",
         "design-gray": "#999999",
         "design-gray-light": "#D0D0D0",
         "design-gray-dark": "#797979",
