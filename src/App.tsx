@@ -10,14 +10,14 @@ const values = [
   { category: "Jun 21", value: 4080 },
 ];
 const figures = [
-  { name: "Balance", value: 5000 },
-  { name: "Benefit", value: 5000 },
-  { name: "Total Benefit", value: 5000 },
-  { name: "Referal Benefit", value: 5000 },
-  { name: "Total Deposit", value: 5000 },
-  { name: "Pending Deposit", value: 5000 },
-  { name: "Total Withdraws", value: 5000 },
-  { name: "Pending Withdraws", value: 5000 },
+  { name: "Balance", value: "5.000" },
+  { name: "Benefit", value: "5.000" },
+  { name: "Total Benefit", value: "5.000" },
+  { name: "Referal Benefit", value: "5.000" },
+  { name: "Total Deposit", value: "5.000" },
+  { name: "Pending Deposit", value: "5.000" },
+  { name: "Total Withdraws", value: "5.000" },
+  { name: "Pending Withdraws", value: "5.000" },
 ];
 
 function App() {
@@ -30,7 +30,15 @@ function App() {
       </nav>
       <div className="container mx-auto grid grid-cols-4 grid-rows-8 gap-6">
         {figures.map((figure) => (
-          <div key={figure.name} className="card"></div>
+          <div key={figure.name} className="card grid grid-cols-[1fr_auto]">
+            <h3 className="text-design-gray-dark dark:text-design-gray text-sm">{figure.name}</h3>
+            <h3 className="rounded-full bg-design-green-light p-[1px_10px] text-xs font-medium text-design-black">
+              USDT
+            </h3>
+            <h1 className="text-2xl font-bold text-design-gray-dark dark:text-design-white">
+              ${figure.value}
+            </h1>
+          </div>
         ))}
 
         <section className="card col-span-2 col-start-1 row-span-4 grid grid-rows-[auto_1fr]">
