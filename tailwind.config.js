@@ -15,7 +15,18 @@ export default {
         "design-white": "#FFFFFF",
         "design-pending": "#CF6565",
         "design-success": "#4BB56C"
-      }
+      },
+      
+      keyframes:{
+        expandY:{
+          '0%': { transform: 'scaleY(0)' },
+          '100%': { transform: 'scaleY(1)' },
+        }
+      },
+
+      animation:{
+        expandY: "expandY 500ms cubic-bezier(0.19, 1, 0.22, 1)"
+      },
     },
   },
   plugins: [],
