@@ -24,11 +24,11 @@ function App() {
   return (
     <div className="bg-design-light grid min-h-svh min-w-max grid-rows-[auto_1fr] px-[70px] py-[30px] dark:bg-design-black">
       <nav className="container mx-auto pb-10">
-        <h1 className="text-xl font-bold uppercase text-design-white">
+        <h1 className="text-xl font-bold uppercase dark:text-design-white text-design-gray-dark">
           Tetherstake
         </h1>
       </nav>
-      <div className="container mx-auto grid grid-cols-4 grid-rows-8 gap-6">
+      <div className="container mx-auto grid grid-cols-4 grid-rows-7 gap-6">
         {figures.map((figure) => (
           <div key={figure.name} className="card grid grid-cols-[1fr_auto]">
             <h3 className="text-design-gray-dark dark:text-design-gray text-sm">{figure.name}</h3>
@@ -41,8 +41,8 @@ function App() {
           </div>
         ))}
 
-        <section className="card col-span-2 col-start-1 row-span-4 grid grid-rows-[auto_1fr]">
-          <h1 className="mb-6 text-base font-semibold text-design-gray-light">
+        <section className="card col-span-2 col-start-1 row-span-3 grid grid-rows-[auto_1fr]">
+          <h1 className="mb-6 text-base font-semibold text-design-gray-dark dark:text-design-gray-light">
             Profit Win
           </h1>
           <div className="text-sm">
@@ -55,7 +55,7 @@ function App() {
           </div>
         </section>
 
-        <section className="card col-span-2 col-start-3 row-span-4"></section>
+        <section className="card col-span-2 col-start-3 row-span-3"></section>
         <section className="card col-span-4 col-start-1 row-span-2"></section>
       </div>
     </div>

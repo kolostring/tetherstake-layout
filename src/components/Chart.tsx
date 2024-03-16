@@ -30,7 +30,7 @@ export default function Chart({
       <div className="relative mb-[10px] mt-3 flex flex-1">
         <div className="flex flex-1 flex-col-reverse justify-between">
           {guideValues.map((v) => (
-            <hr key={v} className="border-dashed border-design-gray-dark" />
+            <hr key={v} className="border-dashed dark:border-design-gray border-design-gray-dark" />
           ))}
         </div>
 
