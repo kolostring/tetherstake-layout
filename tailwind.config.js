@@ -28,6 +28,10 @@ export default {
       animation:{
         expandY: "expandY 500ms cubic-bezier(0.19, 1, 0.22, 1)"
       },
+
+      fontFamily: {
+        inter: ["Inter", "sans-serif"]
+      }
     },
   },
   plugins: [],

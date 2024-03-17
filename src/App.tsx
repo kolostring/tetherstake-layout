@@ -46,7 +46,7 @@ const transactionHistory = [
 
 function App() {
   return (
-    <div className="bg-design-light grid min-h-svh min-w-max grid-rows-[auto_1fr] px-[70px] py-[30px] dark:bg-design-black">
+    <div className="bg-design-light grid min-h-svh min-w-max grid-rows-[auto_1fr] px-[70px] py-[30px] dark:bg-design-black font-inter">
       <nav className="container mx-auto pb-10">
         <h1 className="text-xl font-bold uppercase text-design-gray-dark dark:text-design-white">
           Tetherstake
