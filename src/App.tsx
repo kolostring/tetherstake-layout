@@ -23,8 +23,18 @@ const figures = [
 ];
 const referralLink = "HUKJ8IJ-LI";
 const referrals = [
-  { id: "123", account: "0x50E4...5e05", date: "10/3/2024", benefit: "1.5 USDT" },
-  { id: "456", account: "0x48E6...6e85", date: "09/3/2024", benefit: "1.5 USDT" },
+  {
+    id: "123",
+    account: "0x50E4...5e05",
+    date: "10/3/2024",
+    benefit: "1.5 USDT",
+  },
+  {
+    id: "456",
+    account: "0x48E6...6e85",
+    date: "09/3/2024",
+    benefit: "1.5 USDT",
+  },
 ];
 const transactionHistory = [
   {
@@ -49,11 +59,14 @@ const transactionHistory = [
 
 function App() {
   return (
-    <div className="bg-design-light grid min-h-svh min-w-max grid-rows-[auto_1fr] px-[70px] py-[30px] dark:bg-design-black font-inter">
-      <Navbar/>
-      <div className="container mx-auto grid grid-cols-4 grid-rows-7 gap-6 over">
+    <div className="grid min-h-svh min-w-max grid-rows-[auto_1fr] bg-design-light px-[70px] py-[30px] font-inter dark:bg-design-black">
+      <Navbar />
+      <div className="container mx-auto grid grid-cols-4 grid-rows-7 gap-6">
         {figures.map((figure) => (
-          <div key={figure.name} className="card grid grid-cols-[1fr_auto] overflow-hidden">
+          <div
+            key={figure.name}
+            className="card grid grid-cols-[1fr_auto] overflow-hidden"
+          >
             <h3 className="text-sm text-design-gray-dark dark:text-design-gray">
               {figure.name}
             </h3>
@@ -63,12 +76,11 @@ function App() {
               </h3>
             </div>
 
-            <h1 className="text-2xl font-bold text-design-gray-dark dark:text-design-white animate-appearFromLeft">
+            <h1 className="animate-appearFromLeft text-2xl font-bold text-design-gray-dark dark:text-design-white">
               ${figure.value}
             </h1>
           </div>
         ))}
-
         <section className="card col-span-2 col-start-1 row-span-3 grid grid-rows-[auto_1fr]">
           <h1 className="mb-6 text-base font-semibold text-design-gray-dark dark:text-design-gray-light">
             Profit Win
@@ -82,7 +94,6 @@ function App() {
             />
           </div>
         </section>
-
         <section className="card col-span-2 col-start-3 row-span-3">
           <h1 className="mb-6 text-base font-semibold text-design-gray-dark dark:text-design-gray-light">
             Referral Link
@@ -112,10 +123,13 @@ function App() {
             </div>
 
             {referrals.map((referr) => (
-              <div className="mb-4 grid grid-cols-3 border-b-[1px] border-design-gray pb-2 text-sm text-design-gray dark:border-design-gray-light" key={referr.id}>
+              <div
+                className="mb-4 grid grid-cols-3 border-b-[1px] border-design-gray pb-2 text-sm text-design-gray dark:border-design-gray-light"
+                key={referr.id}
+              >
                 <h2>{referr.account}</h2>
                 <h2>{referr.date}</h2>
-                <div className="flex gap-4 justify-end">
+                <div className="flex justify-end gap-4">
                   <h2>{referr.benefit}</h2>
                   <h3 className="rounded-full bg-design-green-light p-[1px_10px] text-xs font-medium text-design-black">
                     USDT
@@ -143,16 +157,19 @@ function App() {
               <h2>ASSET</h2>
               <h2>AMOUNT</h2>
               <h2>HASH</h2>
-              <span></span>
+              <span></span>over
             </div>
 
             {transactionHistory.map((trns) => (
-              <div className="mb-4 grid grid-cols-6 border-b-[1px] border-design-gray pb-2 text-xs text-design-gray" key={trns.id}>
+              <div
+                className="mb-4 grid grid-cols-6 border-b-[1px] border-design-gray pb-2 text-xs text-design-gray"
+                key={trns.id}
+              >
                 <h3>{trns.type}</h3>
                 <h3>{trns.date}</h3>
                 <div>
                   <h3
-                    className={`text-design-light w-fit rounded-full px-2 text-[10px] font-medium uppercase ${trns.status === "success" ? "bg-design-success" : "bg-design-pending"}`}
+                    className={`w-fit rounded-full px-2 text-[10px] font-medium uppercase text-design-light ${trns.status === "success" ? "bg-design-success" : "bg-design-pending"}`}
                   >
                     {trns.status}
                   </h3>
@@ -176,7 +193,8 @@ function App() {
             </div>
           </div>
         </section>
-      N</div>
+        N
+      </div>
     </div>
   );
 }
