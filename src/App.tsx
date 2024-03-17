@@ -94,6 +94,7 @@ function App() {
               className="border-none bg-transparent pl-4 outline-none"
               type="text"
               value={referralLink}
+              readOnly={true}
             />
             <button className="px-6 py-5 text-design-gray-dark transition-all duration-500 ease-in-out hover:text-design-green dark:text-design-green-light">
               <Clipboard />
@@ -104,18 +105,18 @@ function App() {
             Referral: {referrals.length}
           </h3>
 
-          <div className="grid grid-rows-[auto_1fr_auto]">
-            <div className="mb-4 flex flex-row justify-between border-b-[1px] border-design-gray pb-1 text-sm font-semibold text-design-gray-dark dark:border-design-gray-light dark:text-design-gray-light">
+          <div>
+            <div className="mb-4 grid grid-cols-3 border-b-[1px] border-design-gray pb-1 text-sm font-semibold text-design-gray-dark dark:border-design-gray-light dark:text-design-gray-light">
               <h2>ACCOUNT</h2>
               <h2>DATE REGISTER</h2>
-              <h2>BENEFIT</h2>
+              <h2 className="text-end">BENEFIT</h2>
             </div>
 
             {referrals.map((referr) => (
-              <div className="mb-4 flex flex-row justify-between border-b-[1px] border-design-gray-light pb-2 text-sm text-design-gray dark:border-design-gray">
+              <div className="mb-4 grid grid-cols-3 border-b-[1px] border-design-gray pb-2 text-sm text-design-gray dark:border-design-gray-light">
                 <h2>{referr.account}</h2>
                 <h2>{referr.date}</h2>
-                <div className="flex gap-4">
+                <div className="flex gap-4 justify-end">
                   <h2>{referr.benefit}</h2>
                   <h3 className="rounded-full bg-design-green-light p-[1px_10px] text-xs font-medium text-design-black">
                     USDT
@@ -124,10 +125,10 @@ function App() {
               </div>
             ))}
 
-            <div className="mb-4 flex flex-row justify-between text-base font-semibold text-design-gray-dark dark:text-design-gray-light">
+            <div className="mb-4 grid grid-cols-3 pb-1 text-sm font-semibold text-design-gray-dark dark:text-design-gray-light">
               <h2>ACCOUNT</h2>
               <h2>DATE REGISTER</h2>
-              <h2>BENEFIT</h2>
+              <h2 className="text-end">BENEFIT</h2>
             </div>
           </div>
         </section>
