@@ -25,6 +25,24 @@ const referrals = [
   { account: "0x50E4...5e05", date: "10/3/2024", benefit: "1.5 USDT" },
   { account: "0x48E6...6e85", date: "09/3/2024", benefit: "1.5 USDT" },
 ];
+const transactionHistory = [
+  {
+    type: "Deposit",
+    date: "10/3/2024",
+    status: "pending",
+    asset: "USDT",
+    amount: "10",
+    hash: "0xC8FD...3BEF",
+  },
+  {
+    type: "Deposit",
+    date: "10/3/2024",
+    status: "success",
+    asset: "USDT",
+    amount: "10",
+    hash: "0xC8FD...3BEF",
+  },
+];
 
 function App() {
   return (
@@ -110,7 +128,51 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="card col-span-4 col-start-1 row-span-2"></section>
+        <section className="card col-span-4 col-start-1 row-span-2">
+          <h1 className="mb-6 text-base font-semibold text-design-gray-dark dark:text-design-gray-light">
+            Transition History
+          </h1>
+          <div className="">
+            <div className="mb-4 grid grid-cols-6 border-b-[1px] border-design-gray pb-1 text-xs font-semibold text-design-gray-dark dark:border-design-gray dark:text-design-gray-light">
+              <h2>TYPE</h2>
+              <h2>DATE</h2>
+              <h2>STATUS</h2>
+              <h2>ASSET</h2>
+              <h2>AMOUNT</h2>
+              <h2>HASH</h2>
+              <span></span>
+            </div>
+
+            {transactionHistory.map((trns) => (
+              <div className="mb-4 grid grid-cols-6 border-b-[1px] border-design-gray pb-2 text-xs text-design-gray">
+                <h3>{trns.type}</h3>
+                <h3>{trns.date}</h3>
+                <div>
+                  <h3
+                    className={`text-design-light w-fit font-medium rounded-full px-2 text-[10px] uppercase ${trns.status === "success" ? "bg-design-success" : "bg-design-pending"}`}
+                  >
+                    {trns.status}
+                  </h3>
+                </div>
+
+                <h3>{trns.asset}</h3>
+                <h3>{trns.amount}</h3>
+                <h3>{trns.hash}</h3>
+                <h3></h3>
+              </div>
+            ))}
+
+            <div className="mb-4 grid grid-cols-6 border-b-[1px] border-design-gray pb-1 text-xs font-semibold text-design-gray-dark dark:border-design-gray dark:text-design-gray-light">
+              <h2>TYPE</h2>
+              <h2>DATE</h2>
+              <h2>STATUS</h2>
+              <h2>ASSET</h2>
+              <h2>AMOUNT</h2>
+              <h2>HASH</h2>
+              <span></span>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
