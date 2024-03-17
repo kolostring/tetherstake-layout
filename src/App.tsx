@@ -51,9 +51,9 @@ function App() {
   return (
     <div className="bg-design-light grid min-h-svh min-w-max grid-rows-[auto_1fr] px-[70px] py-[30px] dark:bg-design-black font-inter">
       <Navbar/>
-      <div className="container mx-auto grid grid-cols-4 grid-rows-7 gap-6">
+      <div className="container mx-auto grid grid-cols-4 grid-rows-7 gap-6 over">
         {figures.map((figure) => (
-          <div key={figure.name} className="card grid grid-cols-[1fr_auto]">
+          <div key={figure.name} className="card grid grid-cols-[1fr_auto] overflow-hidden">
             <h3 className="text-sm text-design-gray-dark dark:text-design-gray">
               {figure.name}
             </h3>
@@ -63,7 +63,7 @@ function App() {
               </h3>
             </div>
 
-            <h1 className="text-2xl font-bold text-design-gray-dark dark:text-design-white">
+            <h1 className="text-2xl font-bold text-design-gray-dark dark:text-design-white animate-appearFromLeft">
               ${figure.value}
             </h1>
           </div>

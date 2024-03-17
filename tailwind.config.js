@@ -22,11 +22,16 @@ export default {
         expandY:{
           '0%': { transform: 'scaleY(0)' },
           '100%': { transform: 'scaleY(1)' },
+        },
+        appearFromLeft:{
+          '0%' : {transform: "translateX(-30%)", opacity: "0"},
+          '100%': {transform: "translateX(0%)", opacity: "1"}
         }
       },
 
       animation:{
-        expandY: "expandY 500ms cubic-bezier(0.19, 1, 0.22, 1)"
+        expandY: "expandY 800ms cubic-bezier(0.19, 1, 0.22, 1)",
+        appearFromLeft: "appearFromLeft 800ms cubic-bezier(0.19, 1, 0.22, 1)"
       },
 
       fontFamily: {
