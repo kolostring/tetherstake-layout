@@ -58,9 +58,12 @@ function App() {
             <h3 className="text-sm text-design-gray-dark dark:text-design-gray">
               {figure.name}
             </h3>
-            <h3 className="rounded-full bg-design-green-light p-[1px_10px] text-xs font-medium text-design-black">
-              USDT
-            </h3>
+            <div>
+              <h3 className="rounded-full bg-design-green-light p-[3px_11px] text-xs font-medium text-design-black">
+                USDT
+              </h3>
+            </div>
+
             <h1 className="text-2xl font-bold text-design-gray-dark dark:text-design-white">
               ${figure.value}
             </h1>
@@ -149,7 +152,7 @@ function App() {
                 <h3>{trns.date}</h3>
                 <div>
                   <h3
-                    className={`text-design-light w-fit font-medium rounded-full px-2 text-[10px] uppercase ${trns.status === "success" ? "bg-design-success" : "bg-design-pending"}`}
+                    className={`text-design-light w-fit rounded-full px-2 text-[10px] font-medium uppercase ${trns.status === "success" ? "bg-design-success" : "bg-design-pending"}`}
                   >
                     {trns.status}
                   </h3>
