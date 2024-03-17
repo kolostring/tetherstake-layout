@@ -22,11 +22,12 @@ const figures = [
 ];
 const referralLink = "HUKJ8IJ-LI";
 const referrals = [
-  { account: "0x50E4...5e05", date: "10/3/2024", benefit: "1.5 USDT" },
-  { account: "0x48E6...6e85", date: "09/3/2024", benefit: "1.5 USDT" },
+  { id: "123", account: "0x50E4...5e05", date: "10/3/2024", benefit: "1.5 USDT" },
+  { id: "456", account: "0x48E6...6e85", date: "09/3/2024", benefit: "1.5 USDT" },
 ];
 const transactionHistory = [
   {
+    id: "789",
     type: "Deposit",
     date: "10/3/2024",
     status: "pending",
@@ -35,6 +36,7 @@ const transactionHistory = [
     hash: "0xC8FD...3BEF",
   },
   {
+    id: "101112",
     type: "Deposit",
     date: "10/3/2024",
     status: "success",
@@ -113,7 +115,7 @@ function App() {
             </div>
 
             {referrals.map((referr) => (
-              <div className="mb-4 grid grid-cols-3 border-b-[1px] border-design-gray pb-2 text-sm text-design-gray dark:border-design-gray-light">
+              <div className="mb-4 grid grid-cols-3 border-b-[1px] border-design-gray pb-2 text-sm text-design-gray dark:border-design-gray-light" key={referr.id}>
                 <h2>{referr.account}</h2>
                 <h2>{referr.date}</h2>
                 <div className="flex gap-4 justify-end">
@@ -148,7 +150,7 @@ function App() {
             </div>
 
             {transactionHistory.map((trns) => (
-              <div className="mb-4 grid grid-cols-6 border-b-[1px] border-design-gray pb-2 text-xs text-design-gray">
+              <div className="mb-4 grid grid-cols-6 border-b-[1px] border-design-gray pb-2 text-xs text-design-gray" key={trns.id}>
                 <h3>{trns.type}</h3>
                 <h3>{trns.date}</h3>
                 <div>
